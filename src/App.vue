@@ -15,14 +15,14 @@ import MainTodo from './components/MainTodo.vue';
 </template>
 
 <style>
-@import url('./assets/css/destyle.css');
+@import url('./assets/css/destyle.min.css');
 .back_ground {
   height: 100vh;
   width: 100vw;
   background-image: linear-gradient(
     90deg,
-    rgb(255, 255, 255),
-    rgb(93, 239, 141)
+    rgb(93, 239, 141),
+    rgb(255, 255, 255)
   );
 }
 .wrap {
