@@ -51,6 +51,7 @@ const addTodo = () => {
 }
 .box_list {
   margin-top: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   gap: 4px;

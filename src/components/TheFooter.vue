@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <small>&copy;my-vite-todo</small>
+    <small class="copyright">&copy;my-vite-todo</small>
   </footer>
 </template>
 
@@ -10,5 +10,8 @@
   height: 30px;
   position: absolute;
   bottom: 0;
+}
+.copyright {
+  height: 20px;
 }
 </style>

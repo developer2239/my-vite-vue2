@@ -17,7 +17,7 @@ import MainTodo from './components/MainTodo.vue';
 <style>
 @import url('./assets/css/destyle.min.css');
 .back_ground {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-image: linear-gradient(
     90deg,
@@ -26,6 +26,7 @@ import MainTodo from './components/MainTodo.vue';
   );
 }
 .wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
