@@ -8,5 +8,7 @@
 .footer {
   margin-top: 16px;
   height: 30px;
+  position: absolute;
+  bottom: 0;
 }
 </style>
