@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTodoList } from '../composables/useTodoList';
 const todoRef = ref('');
 const isEditRef = ref(false);
-const { todoListRef, add, show, edit, del, check } = useTodoList();
+const { todoListRef, add, show, edit, del, check, countFin } = useTodoList();
 
 const addTodo = () => {
   add(todoRef.value);
@@ -28,6 +28,12 @@ const changeCheck = (id) => {
 </script>
 
 <template>
+  <div class="finCount">
+    <span>総数 : {{ todoListRef.length }} </span>
+    <br />
+    <span> 完了 : {{ countFin }}</span>
+    <span> 未完了 : {{ todoListRef.length - countFin }}</span>
+  </div>
   <div class="box_input">
     <input
       type="text"
@@ -110,6 +116,10 @@ const changeCheck = (id) => {
   text-decoration: line-through;
   background-color: rgb(175, 175, 175);
   color: #777;
+}
+.finCount {
+  text-align: center;
+  margin-top: 12px;
 }
 .green {
   background-color: rgb(23, 193, 23);
