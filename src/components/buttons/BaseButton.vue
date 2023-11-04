@@ -4,8 +4,8 @@ const aaa = () => {
 };
 const props = defineProps({ color: String });
 const emits = defineEmits(['on-click']);
-const onClick = (str) => {
-  emits('on-click', str);
+const onClick = () => {
+  emits('on-click');
 };
 </script>
 <template>

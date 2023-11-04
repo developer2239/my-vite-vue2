@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useTodoList } from '../composables/useTodoList';
 import BaseButton from './buttons/BaseButton.vue';
+import ButtonAdd from './buttons/ButtonAdd.vue';
 const todoRef = ref('');
 const isEditRef = ref(false);
 const { todoListRef, add, show, edit, del, check, countFin } = useTodoList();
@@ -45,7 +46,7 @@ const changeCheck = (id) => {
     <BaseButton color="green" @on-click="editTodo" v-if="isEditRef">
       EDIT
     </BaseButton>
-    <BaseButton color="blue" @on-click="addTodo" v-else> ADD </BaseButton>
+    <ButtonAdd @on-click="addTodo" v-else />
   </div>
   <div class="box_list">
     <div class="todo_list" v-for="todo in todoListRef" :key="todo.id">
