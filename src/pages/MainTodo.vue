@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import { useTodoList } from '../composables/useTodoList';
-import ButtonAdd from './buttons/ButtonAdd.vue';
-import ButtonEdit from './buttons/ButtonEdit.vue';
-import ButtonDel from './buttons/ButtonDel.vue';
+import ButtonAdd from '../components/buttons/ButtonAdd.vue';
+import ButtonEdit from '../components/buttons/ButtonEdit.vue';
+import ButtonDel from '../components/buttons/ButtonDel.vue';
 const todoRef = ref('');
 const isEditRef = ref(false);
 const { todoListRef, add, show, edit, del, check, countFin } = useTodoList();
@@ -119,7 +119,7 @@ const changeCheck = (id) => {
   color: #777;
 }
 .count_panel {
-  border: 1px solid #777;
+  border: 1px solid black;
   border-radius: 6px;
   padding: 5px;
   text-align: center;

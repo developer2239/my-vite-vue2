@@ -1,14 +1,14 @@
 <script setup>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
-import MainTodo from './components/MainTodo.vue';
+// import MainTodo from './components/MainTodo.vue';
 </script>
 
 <template>
   <div class="back_ground">
     <div class="wrap">
       <TheHeader></TheHeader>
-      <MainTodo></MainTodo>
+      <main class="main"><RouterView /></main>
       <TheFooter></TheFooter>
     </div>
   </div>

@@ -1,6 +1,9 @@
 <template>
   <footer class="footer">
-    <small class="copyright">&copy;TODO_APP</small>
+    <small class="footer_contents">
+      <RouterLink class="footer_links" to="/"> Home </RouterLink>
+      <RouterLink class="footer_links" to="/About"> About </RouterLink>
+    </small>
   </footer>
 </template>
 
@@ -11,7 +14,13 @@
   position: absolute;
   bottom: 0;
 }
-.copyright {
+.footer_contents {
   height: 20px;
+}
+.footer_links {
+  margin: 8px;
+}
+.footer_links:hover {
+  text-decoration: underline;
 }
 </style>
