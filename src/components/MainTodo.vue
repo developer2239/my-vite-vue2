@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import { useTodoList } from '../composables/useTodoList';
-import BaseButton from './buttons/BaseButton.vue';
 import ButtonAdd from './buttons/ButtonAdd.vue';
 import ButtonEdit from './buttons/ButtonEdit.vue';
+import ButtonDel from './buttons/ButtonDel.vue';
 const todoRef = ref('');
 const isEditRef = ref(false);
 const { todoListRef, add, show, edit, del, check, countFin } = useTodoList();
@@ -60,9 +60,7 @@ const changeCheck = (id) => {
       </div>
       <div class="btns">
         <ButtonEdit @on-click="showTodo(todo.id)" />
-        <BaseButton color="pink" @on-click="deleteTodo(todo.id)">
-          DEL
-        </BaseButton>
+        <ButtonDel @on-click="deleteTodo(todo.id)" />
       </div>
     </div>
   </div>
