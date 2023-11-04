@@ -31,11 +31,10 @@ const changeCheck = (id) => {
 </script>
 
 <template>
-  <div class="finCount">
-    <span>Total : {{ todoListRef.length }} </span>
-    <br />
-    <span> done : {{ countFin }}</span>
-    <span> active : {{ todoListRef.length - countFin }}</span>
+  <div class="count_panel">
+    <span> Total:{{ todoListRef.length }} </span>
+    <span> Done:{{ countFin }} </span>
+    <span> Active:{{ todoListRef.length - countFin }} </span>
   </div>
   <div class="box_input">
     <input
@@ -45,7 +44,7 @@ const changeCheck = (id) => {
       placeholder="NEW TODO"
     />
     <ButtonEdit @on-click="editTodo" v-if="isEditRef" />
-    <ButtonAdd @on-click="addTodo" v-else />
+    <ButtonAdd @add-click="addTodo" v-else />
   </div>
   <div class="box_list">
     <div class="todo_list" v-for="todo in todoListRef" :key="todo.id">
@@ -60,7 +59,7 @@ const changeCheck = (id) => {
       </div>
       <div class="btns">
         <ButtonEdit @on-click="showTodo(todo.id)" />
-        <ButtonDel @on-click="deleteTodo(todo.id)" />
+        <ButtonDel @del-click="deleteTodo(todo.id)" />
       </div>
     </div>
   </div>
@@ -119,7 +118,10 @@ const changeCheck = (id) => {
   background-color: rgb(175, 175, 175);
   color: #777;
 }
-.finCount {
+.count_panel {
+  border: 1px solid #777;
+  border-radius: 6px;
+  padding: 5px;
   text-align: center;
   margin-top: 12px;
 }

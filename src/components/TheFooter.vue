@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <small class="copyright">&copy;my-vite-todo</small>
+    <small class="copyright">&copy;TODO_APP</small>
   </footer>
 </template>
 
