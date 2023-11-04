@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useTodoList } from '../composables/useTodoList';
+import BaseButton from './buttons/BaseButton.vue';
 const todoRef = ref('');
 const isEditRef = ref(false);
 const { todoListRef, add, show, edit, del, check, countFin } = useTodoList();
@@ -41,8 +42,10 @@ const changeCheck = (id) => {
       v-model="todoRef"
       placeholder="NEW TODO"
     />
-    <button class="btn green" @click="editTodo" v-if="isEditRef">CHG</button>
-    <button class="btn" @click="addTodo" v-else>ADD</button>
+    <BaseButton color="green" @on-click="editTodo" v-if="isEditRef">
+      EDIT
+    </BaseButton>
+    <BaseButton color="blue" @on-click="addTodo" v-else> ADD </BaseButton>
   </div>
   <div class="box_list">
     <div class="todo_list" v-for="todo in todoListRef" :key="todo.id">
@@ -56,8 +59,12 @@ const changeCheck = (id) => {
         <label>{{ todo.task }}</label>
       </div>
       <div class="btns">
-        <div class="btn green" @click="showTodo(todo.id)">CHG</div>
-        <div class="btn pink" @click="deleteTodo(todo.id)">DEL</div>
+        <BaseButton color="green" @on-click="showTodo(todo.id)">
+          EDIT
+        </BaseButton>
+        <BaseButton color="pink" @on-click="deleteTodo(todo.id)">
+          DEL
+        </BaseButton>
       </div>
     </div>
   </div>
@@ -105,7 +112,6 @@ const changeCheck = (id) => {
 }
 .btn {
   padding: 8px;
-  background-color: rgb(5, 5, 164);
   border-radius: 6px;
   color: #fff;
   text-align: center;
@@ -120,11 +126,5 @@ const changeCheck = (id) => {
 .finCount {
   text-align: center;
   margin-top: 12px;
-}
-.green {
-  background-color: rgb(23, 193, 23);
-}
-.pink {
-  background-color: rgb(211, 79, 101);
 }
 </style>
