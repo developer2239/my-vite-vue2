@@ -22,7 +22,7 @@ import MainTodo from './components/MainTodo.vue';
   background-image: linear-gradient(
     90deg,
     rgb(93, 239, 141),
-    rgb(255, 255, 255)
+    rgb(161, 190, 253)
   );
 }
 .wrap {
